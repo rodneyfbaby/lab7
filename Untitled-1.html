@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lab 7 intro to jQuery</title>
+<style>
+.good{color:green;}
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+<h2>Lab 7</h2>
+
+<h3>Section 1</h3>
+
+<section>
+
+<p>jQuery is free, open source software, licensed under the MIT License. jQuery's syntax is designed to make it easier to navigate a document, select DOM elements, create animations, handle events, and develop Ajax applications.</p>
+
+<p>jQuery is free, open source software, licensed under the MIT License. jQuery's syntax is designed to make it easier to navigate a document, select DOM elements, create animations, handle events, and develop Ajax applications.</p>
+
+<p>jQuery is free, open source software, licensed under the MIT License. jQuery's syntax is designed to make it easier to navigate a document, select DOM elements, create animations, handle events, and develop Ajax applications.</p>
+
+</section>
+
+</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="jquery.transit.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+		$('section p:first').css('color', 'red');
+		$('section p:last').addClass('good');
+		
+		$('section').hover(handlerIn, handlerOut)
+		function handlerIn(e)
+		{
+			$('section').transition({y:'300px'});
+		}
+		
+		function handlerOut(e)
+		{
+			$('section').transition({y:'-300px'});
+		}
+		
+	});
+</script>
+
+</body>
+</html>
